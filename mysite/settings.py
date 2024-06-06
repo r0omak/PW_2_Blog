@@ -26,6 +26,10 @@ SECRET_KEY = 'django-insecure-2mdt7blq7fgs&@)o1yv)p20nx)j6l+ylngn=_i&bfbkn%0vgg+
 DEBUG = True
 
 ALLOWED_HOSTS = []
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 
 # Application definition
@@ -55,7 +59,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

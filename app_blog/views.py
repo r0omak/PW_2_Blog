@@ -3,6 +3,8 @@ from django.views.generic import ListView, DetailView
 from .models import Article, Category
 from django.shortcuts import get_object_or_404
 
+def index(request):
+    return render(request, 'blog/index.html')
 class ArticleListView(ListView):
     model = Article
     template_name = 'app_blog/article_list.html'
@@ -25,6 +27,8 @@ class HomePageView(ListView):
     def get_queryset(self):
         return Category.objects.all()
 
+    
+
 class ArticleDetail(DetailView):
     model = Article
     template_name = 'article_detail.html'
@@ -43,11 +47,26 @@ class ArticleList(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['category'] = Category.objects.get(slug=self.kwargs.get('slug', None))
+        slug = self.kwargs.get('slug', None)
+        if slug:
+            try:
+                context['category'] = Category.objects.get(slug=slug)
+            except Category.DoesNotExist:
+                context['category'] = None
+        else:
+            context['category'] = None
         return context
 
     def get_queryset(self):
-        return Article.objects.all()
+        slug = self.kwargs.get('slug', None)
+        if slug:
+            try:
+                category = Category.objects.get(slug=slug)
+                return Article.objects.filter(category=category)
+            except Category.DoesNotExist:
+                return Article.objects.none()
+        else:
+            return Article.objects.all()
 
 class ArticleCategoryList(ArticleList):
     def get_queryset(self):

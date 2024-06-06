@@ -1,0 +1,134 @@
+/* Загальні стилі */
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.breadcrumb li {
+  display: inline-block; /* Щоб елементи були в одному рядку */
+  margin-right: 10px; /* Відступ між елементами */
+}
+
+/* Контейнер */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Заголовки */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Georgia', serif;
+  color: #222;
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  text-align: center;
+  color: #333;
+}
+
+h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.75em;
+  color: #444;
+}
+
+/* Статті */
+.article-list {
+  list-style: none;
+  padding: 0;
+}
+
+.article-item {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
+}
+
+.article-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.article-item h2 {
+  margin-top: 0;
+  font-size: 1.5em;
+  color: #555;
+}
+
+.article-item p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Посилання */
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Навігація */
+.navbar {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.navbar a {
+  color: #ffffff;
+  margin-right: 20px;
+  font-size: 1.1em;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Футер */
+footer {
+  background-color: #007bff;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
+  border-radius: 8px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+/* Додаткові стилі для гарного вигляду */
+.article-item h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: #007bff;
+  margin-top: 8px;
+}
