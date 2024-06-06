@@ -1,12 +1,16 @@
 {% extends "base.html" %} {% load static %} {% block content %} {% spaceless %}
 <h2>Категорії</h2>
-{% if categories %} {% for item in categories %}
-<div>
-  <a href="{{ item.get_absolute_url }}">
-    <h4>{{ item.category }}</h4>
-  </a>
+
+<div class="categories">
+  {% if categories %} {% for item in categories %}
+  <div class="category">
+    <a href="{{ item.get_absolute_url }}" class="category-link">
+      <h4>{{ item.category }}</h4>
+    </a>
+  </div>
+  {% endfor %} {% endif %}
 </div>
-{% endfor %} {% endif %} {% if articles %} {% for item in articles %}
+{% if articles %} {% for item in articles %}
 <div>
   <a href="{{ item.get_absolute_url }}">
     <h4>{{ item.title }}</h4>

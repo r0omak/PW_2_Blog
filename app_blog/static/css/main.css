@@ -12,6 +12,11 @@ body {
   margin-right: 10px; /* Відступ між елементами */
 }
 
+.category {
+  display: block; /* Щоб елементи були в одному рядку */
+  gap: 10px; /* Відступ між елементами */
+}
+
 /* Контейнер */
 .container {
   max-width: 800px;
@@ -77,13 +82,6 @@ h2 {
   line-height: 1.6;
 }
 
-/* Посилання */
-a {
-  color: #007bff;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
 a:hover {
   color: #0056b3;
   text-decoration: underline;
@@ -123,7 +121,6 @@ footer p {
   font-size: 0.9em;
 }
 
-/* Додаткові стилі для гарного вигляду */
 .article-item h2::after {
   content: '';
   display: block;
@@ -131,4 +128,35 @@ footer p {
   height: 2px;
   background: #007bff;
   margin-top: 8px;
+}
+.category-link {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.category {
+  padding: 10px;
+  margin-bottom: 5px;
+  background-color: #f0f0f0;
+}
+
+.category:hover {
+  background-color: #e0e0e0;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.categories h4 {
+  margin: 0;
+}
+
+.categories a {
+  text-decoration: none;
+  color: #333;
 }
